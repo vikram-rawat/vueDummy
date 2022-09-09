@@ -1,11 +1,15 @@
 <div id="app">
-  {%%  message %%}
-  <div :id="`shiny-plot-output-${id}`">
+  {%% message %%}
+  <div :id="`shiny-plot-output-${plotid}`">
     <div
-      :id="id"
+      :id="plotid"
       class="shiny-plot-output"
-      style="width: '100%'; min-height: 25rem; height: '100%';"
-      >
-    </div>
+      style="width: '100%'; min-height: 25rem; height: '100%'"
+    ></div>
   </div>
+  <div
+    :id="plotlyid"
+    style="width: 100%; height: 400px"
+    class="plotly html-widget html-widget-output shiny-report-size shiny-report-theme"
+  ></div>
 </div>
