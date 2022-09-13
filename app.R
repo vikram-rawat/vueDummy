@@ -22,11 +22,15 @@ ui <- fluidPage(
     # Show a plot of the generated distribution
     mainPanel(
       tagList(
-        htmltools::attachDependencies(
-          x = "distPlotly",
-          value = htmlwidgets:::getDependency("plotly")
-        ),
-        htmlTemplate(filename = "html/index.html")
+        # htmltools::attachDependencies(
+        #   x = "distPlotly",
+        #   value = htmlwidgets:::getDependency("plotly")
+        # ),
+        htmlTemplate(
+          filename = "html/index.html",
+          static_plot = plotOutput("distPlot"),
+          plotly_plot = plotlyOutput("distPlotly")
+        )
       ),
       tags$script(src = "js/index.js")
     )
