@@ -11,7 +11,8 @@ ui <- fluidPage(
   # Sidebar with a slider input for number of bins
   sidebarLayout(
     sidebarPanel(
-      sliderInput("bins",
+      sliderInput(
+        "bins",
         "Number of bins:",
         min = 1,
         max = 50,
@@ -22,10 +23,6 @@ ui <- fluidPage(
     # Show a plot of the generated distribution
     mainPanel(
       tagList(
-        # htmltools::attachDependencies(
-        #   x = "distPlotly",
-        #   value = htmlwidgets:::getDependency("plotly")
-        # ),
         htmlTemplate(
           filename = "html/index.html",
           static_plot = plotOutput("distPlot"),
