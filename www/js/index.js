@@ -1,31 +1,20 @@
 $(document).on('shiny:connected', function (event) {
   Shiny.unbindAll();
-  const { createApp, ref, onMounted, nextTick, watchEffect } = Vue;
-
+  const { createApp, ref, onMounted, watchEffect } = Vue;
   application = createApp({
     delimiters: ['{%%', '%%}'],
     setup() {
-      const message = ref('Hello Vue!');
-      const plotid = ref('distplot');
-      const plotlyid = ref('distPlotly');
+      message = ref('Vue for Shiny');
 
-      onMounted(() => {
-        nextTick(() => {});
-      });
+      onMounted(() => {});
 
-      watchEffect(() => {
-        console.log(Shiny.shinyapp.$inputValues.bins);
-      });
+      watchEffect(() => {});
 
       return {
         message,
-        plotid,
-        plotlyid,
       };
     },
   });
-
   runApp = application.mount('#app');
-
   Shiny.bindAll();
 });
