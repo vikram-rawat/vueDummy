@@ -38,9 +38,12 @@ ui <- fluidPage(
 server <- function(input, output) {
   main_plot <- reactive({
     x <- faithful[, 2]
-    bins <- seq(min(x), max(x), length.out = input$bins + 1)
     ggplt <- ggplot(as.data.frame(x), aes(x = x)) +
-      geom_histogram() +
+      geom_histogram(
+        colour = 4,
+        fill = "royalblue",
+        bins = input$bins
+      ) +
       theme_bw()
 
     return(ggplt)

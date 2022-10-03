@@ -6,7 +6,7 @@ $(document).on('shiny:connected', function (event) {
     delimiters: ['{%%', '%%}'],
     setup() {
       const message = ref('Hello Vue!');
-      const plotid = ref(1);
+      const plotid = ref('distplot');
       const plotlyid = ref('distPlotly');
 
       onMounted(() => {
